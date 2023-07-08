@@ -30,6 +30,9 @@ public class TelephoneBook{
             map.get(name).removeIf(value -> value == number);
         }
     }
+    public ArrayList<Integer> getTelephoneNumber(String name){
+        return map.get(name);
+    }
 
     public String toString(){
         return map.toString();

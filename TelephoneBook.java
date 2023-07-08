@@ -23,8 +23,12 @@ public class TelephoneBook{
         //Если такая запись существует удаляем её, в противном случае ничего не делаем.
         if(map.containsKey(name)) map.remove(name);
     }
+    //Удаляет номер телефона у определенной записи
     public void removeNumber(String name, int number){
-
+        //Если запись существует и у нее есть такой номер
+        if(map.containsKey(name) && map.get(name).contains(number)){
+            map.get(name).removeIf(value -> value == number);
+        }
     }
 
     public String toString(){
